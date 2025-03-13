@@ -13,21 +13,27 @@ import csv
 BROKEN_WEBSITES_LOG = "broken_websites_contacts.csv"
 BROKEN_WEBSITES_SUMMARY = "broken_websites_summary.txt"
 
-# Updated list to focus only on Singapore, Philippines, and Malaysia
+# Updated list to focus on small to medium companies in Singapore, Philippines, and Malaysia
 COMPANY_SEARCH_QUERIES = [
-    "top companies in Singapore",
-    "major corporations in Singapore",
-    "leading businesses in Singapore",
-    "top companies in Philippines",
-    "major corporations in Philippines",
-    "leading businesses in Philippines",
-    "top companies in Malaysia",
-    "major corporations in Malaysia", 
-    "leading businesses in Malaysia"
+    "small business Singapore",
+    "medium enterprises Singapore",
+    "SME Singapore",
+    "small business Philippines",
+    "medium enterprises Philippines", 
+    "SME Philippines",
+    "small business Malaysia",
+    "medium enterprises Malaysia",
+    "SME Malaysia",
+    "startup companies Singapore",
+    "startup companies Philippines",
+    "startup companies Malaysia",
+    "local business Singapore",
+    "local business Philippines",
+    "local business Malaysia"
 ]
 
 def get_company_websites(num_results=20):
-    """Get a list of company websites from Singapore, Philippines, and Malaysia"""
+    """Get a list of small to medium company websites from Singapore, Philippines, and Malaysia"""
     all_websites = []
     
     for query in COMPANY_SEARCH_QUERIES:
@@ -317,9 +323,9 @@ def find_broken_websites_with_contacts(max_websites=100, max_contacts=15):
     return broken_websites_data
 
 if __name__ == "__main__":
-    print("Starting broken website collector for Southeast Asian companies...")
+    print("Starting broken website collector for small to medium companies in Southeast Asia...")
     print("This script will:")
-    print("1. Search for company websites in Singapore, Philippines, and Malaysia")
+    print("1. Search for small to medium businesses in Singapore, Philippines, and Malaysia")
     print("2. Check if the websites are broken")
     print("3. Extract contact information from broken websites")
     print("4. Stop after collecting information for 15 companies")
